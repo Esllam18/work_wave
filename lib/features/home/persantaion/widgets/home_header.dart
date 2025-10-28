@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:work_wave/core/consts/app_colors.dart';
 import 'package:work_wave/core/widgets/custom_text.dart';
 
 class HomeHeader extends StatelessWidget {
@@ -16,14 +17,14 @@ class HomeHeader extends StatelessWidget {
           children: [
             CustomText(
               txt: 'Welcome to Jobseek!',
-              fontSize: 14,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              color: Color(0xff95969D),
+              color: AppColors.accent,
             ),
             CustomText(
               txt: 'Discover Jobs 🔥',
-              color: Color(0xff1F41BB),
-              fontSize: 22,
+              color: AppColors.primary,
+              fontSize: 22.sp,
               fontWeight: FontWeight.w700,
             ),
           ],

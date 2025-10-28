@@ -18,7 +18,7 @@ class PopularJobsListView extends StatelessWidget {
           subTital: 'Burger King',
           image: AppImages.burgerKing,
         ),
-        Gap(17.h),
+        Gap(12.h),
         PopularJobCard(
           tital: 'Product Manager',
           salery: r'$84,000/y',
@@ -48,6 +48,10 @@ class PopularJobCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      tileColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusGeometry.circular(16.r),
+      ),
       contentPadding: EdgeInsets.all(12),
       leading: Image.asset(image),
       title: CustomText(

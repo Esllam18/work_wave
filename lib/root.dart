@@ -58,7 +58,7 @@ class _RootState extends State<Root> {
       },
       behavior: HitTestBehavior.deferToChild,
       child: Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(6),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
