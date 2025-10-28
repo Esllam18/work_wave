@@ -33,7 +33,8 @@ class HomeHeader extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 30,
-              //  child: Image.asset(AppImages.user)
+              // child:
+              // Image.asset(AppImages.user)
             ),
             Positioned(
               right: 0,
@@ -41,6 +42,7 @@ class HomeHeader extends StatelessWidget {
               child: CircleAvatar(
                 radius: 7.r,
                 backgroundColor: Colors.white,
+
                 child: CircleAvatar(radius: 5.r, backgroundColor: Colors.red),
               ),
             ),

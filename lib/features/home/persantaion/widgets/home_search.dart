@@ -20,15 +20,13 @@ class HomeSearch extends StatelessWidget {
         ),
         SizedBox(width: 12.w),
         Container(
-          width: 58.w,
-          height: 58.h,
           decoration: BoxDecoration(
             color: AppColors.secondary,
             borderRadius: BorderRadius.circular(12.r),
           ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Image.asset(AppIcons.filter),
+            child: Image.asset(AppIcons.filter, width: 22, height: 25),
           ),
         ),
       ],
