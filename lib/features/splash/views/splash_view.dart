@@ -64,6 +64,7 @@ class _SplashViewState extends State<SplashView>
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
+            // ignore: deprecated_member_use
             colors: [AppColors.primary, AppColors.primary.withOpacity(0.7)],
           ),
         ),
@@ -80,9 +81,11 @@ class _SplashViewState extends State<SplashView>
                     Container(
                       padding: EdgeInsets.all(responsive.setWidth(24)),
                       decoration: BoxDecoration(
+                        // ignore: deprecated_member_use
                         color: Colors.white.withOpacity(0.15),
                         borderRadius: BorderRadius.circular(30),
                         border: Border.all(
+                          // ignore: deprecated_member_use
                           color: Colors.white.withOpacity(0.3),
                           width: 2,
                         ),
@@ -104,6 +107,7 @@ class _SplashViewState extends State<SplashView>
                     CustomText(
                       txt: 'Find Your Perfect Job',
                       fontSize: 16,
+                      // ignore: deprecated_member_use
                       color: Colors.white.withOpacity(0.9),
                     ),
                   ],

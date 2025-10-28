@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:work_wave/core/consts/app_assets.dart';
 import 'package:work_wave/core/widgets/custom_text.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -25,11 +25,7 @@ class CustomAppBar extends StatelessWidget {
             color: const Color(0xff356899),
           ),
           Gap(10.w),
-          Icon(
-            Icons.note_alt_outlined,
-            size: 28.sp,
-            color: const Color(0xff356899),
-          ),
+          Image.asset(AppIcons.editSquare, width: 28.w, height: 28.h),
         ],
       ),
     );

@@ -19,6 +19,7 @@ class AppIcons {
   static const String saved = 'assets/icons/saved.svg';
   static const String category = 'assets/icons/category.svg';
   static const String filter = 'assets/icons/Filter.png';
+  static const String editSquare = 'assets/icons/Edit-Square.png';
 }
 
 class AppBanners {}
