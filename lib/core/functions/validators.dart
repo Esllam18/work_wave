@@ -33,6 +33,16 @@ class AppValidators {
     return null;
   }
 
+  /// ✅ Validate Confirm Password
+  static String? validateConfirmPassword(String? value, String? original) {
+    if (value == null || value.isEmpty) {
+      return 'Confirm Password cannot be empty';
+    } else if (value != original) {
+      return 'Passwords do not match';
+    }
+    return null;
+  }
+
   /// ✅ Validate Phone Number (E.164 format)
   static String? validatePhone(String? value) {
     if (value == null || value.trim().isEmpty) {

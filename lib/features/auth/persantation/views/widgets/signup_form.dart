@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:work_wave/core/consts/app_colors.dart';
 import 'package:work_wave/core/functions/validators.dart';
-import 'package:work_wave/core/utils/responsive_helper.dart';
+import 'package:work_wave/core/router/route_names.dart';
 import 'package:work_wave/core/widgets/custom_button.dart';
 import 'package:work_wave/core/widgets/custom_text.dart';
 import 'package:work_wave/core/widgets/custom_text_form_field.dart';
@@ -10,170 +13,89 @@ import 'package:work_wave/core/widgets/custom_text_form_field.dart';
 class SignupForm extends StatelessWidget {
   const SignupForm({
     super.key,
-    required this.formKey,
     required this.emailController,
     required this.passwordController,
-    required this.responsive,
-    required this.isLoading,
-    required this.signup,
-    required this.nameController,
+    required this.confirmPasswordController,
+    required this.onPressed,
   });
-
-  final GlobalKey<FormState> formKey;
   final TextEditingController emailController;
   final TextEditingController passwordController;
-  final TextEditingController nameController;
-  final Responsive responsive;
-  final bool isLoading;
-  final Future<void> Function() signup;
-
+  final TextEditingController confirmPasswordController;
+  final void Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: EdgeInsets.all(responsive.setWidth(28)),
       child: Form(
-        key: formKey,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: responsive.setHeight(20)),
+            Gap(82.h),
             CustomText(
-              txt: 'Full Name',
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              color: AppColors.textPrimary,
+              fontFamily: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold,
+              ).fontFamily,
+              txt: 'Create Account',
+              fontSize: 24.sp,
+              color: AppColors.primary,
             ),
-            SizedBox(height: responsive.setHeight(8)),
-            CustomTextFormField(
-              controller: nameController,
-              hint: 'Enter your full name',
-              keyboardType: TextInputType.name,
-              prefixIcon: Icons.person_outline,
-              validator: AppValidators.validateName,
-            ),
-            SizedBox(height: responsive.setHeight(16)),
+            Gap(34.h),
             CustomText(
-              txt: 'Email',
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              color: AppColors.textPrimary,
+              txt: 'Create an account so you can explore all the existing jobs',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w500,
+              color: AppColors.black,
+              textAlign: TextAlign.center,
+              maxLines: 2,
             ),
-            SizedBox(height: responsive.setHeight(8)),
-            CustomTextFormField(
-              controller: emailController,
-              hint: 'Enter your email',
+            Gap(53.h),
+
+            CustomTextormField(
+              hint: 'Email',
               keyboardType: TextInputType.emailAddress,
-              prefixIcon: Icons.email_outlined,
+              controller: emailController,
               validator: AppValidators.validateEmail,
             ),
-            SizedBox(height: responsive.setHeight(16)),
-            CustomText(
-              txt: 'Password',
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              color: AppColors.textPrimary,
-            ),
-            SizedBox(height: responsive.setHeight(8)),
-            CustomTextFormField(
-              controller: passwordController,
-              hint: 'Enter your password',
+            Gap(29.h),
+            CustomTextormField(
+              hint: 'Password',
               obscureText: true,
-              prefixIcon: Icons.lock_outline,
+              controller: passwordController,
               validator: AppValidators.validatePassword,
             ),
-            SizedBox(height: responsive.setHeight(30)),
-            SizedBox(
-              width: double.infinity,
-              height: responsive.setHeight(56),
-              child: CustomButton(
-                backgroundColor: AppColors.primary,
-                onPressed: isLoading ? () {} : signup,
-                content: isLoading
-                    ? SizedBox(
-                        height: 24,
-                        width: 24,
-                        child: CircularProgressIndicator(
-                          color: AppColors.white,
-                          strokeWidth: 2,
-                        ),
-                      )
-                    : CustomText(
-                        txt: 'Sign Up',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.white,
-                      ),
+            Gap(29.h),
+            CustomTextormField(
+              hint: 'Confirm Password',
+              obscureText: true,
+              controller: confirmPasswordController,
+              validator: (value) => AppValidators.validateConfirmPassword(
+                value,
+                passwordController.text,
               ),
             ),
-            SizedBox(height: responsive.setHeight(20)),
-            Row(
-              children: [
-                Expanded(child: Divider()),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: responsive.setWidth(16),
-                  ),
-                  child: CustomText(
-                    txt: 'OR',
-                    fontSize: 12,
-                    color: AppColors.textSecondary,
-                  ),
+
+            Gap(53.h),
+            SizedBox(
+              width: double.infinity,
+              child: CustomButton(
+                backgroundColor: AppColors.primary,
+                content: CustomText(
+                  txt: 'Sign in',
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
                 ),
-                Expanded(child: Divider()),
-              ],
+                onPressed: onPressed,
+              ),
             ),
-            SizedBox(height: responsive.setHeight(20)),
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.g_mobiledata_rounded, size: 28),
-                    label: Text('Google'),
-                    style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                        vertical: responsive.setHeight(14),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(width: responsive.setWidth(12)),
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.facebook_rounded, size: 24),
-                    label: Text('Facebook'),
-                    style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                        vertical: responsive.setHeight(14),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: responsive.setHeight(30)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomText(
-                  txt: 'Already have an account? ',
-                  fontSize: 14,
-                  color: AppColors.textSecondary,
-                ),
-                TextButton(
-                  onPressed: () => context.pop(),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 4),
-                  ),
-                  child: CustomText(
-                    txt: 'Login',
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.primary,
-                  ),
-                ),
-              ],
+            Gap(40.h),
+            TextButton(
+              onPressed: () => GoRouter.of(context).push(RouteNames.login),
+              child: CustomText(
+                txt: 'Already have an account',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: Color(0xff626262),
+              ),
             ),
           ],
         ),

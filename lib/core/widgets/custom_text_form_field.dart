@@ -1,47 +1,42 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:work_wave/core/widgets/custom_text.dart';
 import '../consts/app_colors.dart';
 
-class CustomTextFormField extends StatefulWidget {
-  final TextEditingController controller;
-  final String hint;
-  final TextInputType keyboardType;
-  final bool obscureText;
-  final int maxLines;
-  final IconData? prefixIcon;
-  final String? Function(String?)? validator;
-  final Widget? label;
-
-  const CustomTextFormField({
+class CustomTextormField extends StatefulWidget {
+  const CustomTextormField({
     super.key,
-    required this.controller,
     required this.hint,
-    this.keyboardType = TextInputType.text,
-    this.obscureText = false,
-    this.maxLines = 1,
-    this.prefixIcon,
+    this.controller,
     this.validator,
-    this.label,
+    this.keyboardType,
+    this.obscureText = false,
+    this.maxLines,
+    this.prefixIcon,
   });
+  final String hint;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
+  final TextInputType? keyboardType;
+  final bool obscureText;
+  final int? maxLines;
+  final IconData? prefixIcon;
 
   @override
-  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+  State<CustomTextormField> createState() => _CustomTextormFieldState();
 }
 
-class _CustomTextFormFieldState extends State<CustomTextFormField> {
+class _CustomTextormFieldState extends State<CustomTextormField> {
   late bool _obscure;
   final FocusNode _focusNode = FocusNode();
-  bool _isFocused = false;
-
   @override
   void initState() {
     super.initState();
     _obscure = widget.obscureText;
     _focusNode.addListener(() {
-      setState(() {
-        _isFocused = _focusNode.hasFocus;
-      });
+      setState(() {});
     });
   }
 
@@ -59,69 +54,45 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      decoration: BoxDecoration(
-        color: Colors.grey[50],
-        borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(
-          color: _isFocused ? AppColors.primary : Colors.grey[300]!,
-          width: _isFocused ? 2 : 1,
-        ),
-        boxShadow: _isFocused
-            ? [
-                BoxShadow(
-                  color: AppColors.primary.withOpacity(0.1),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
+    return TextFormField(
+      obscureText: _obscure,
+      focusNode: _focusNode,
+
+      validator: widget.validator,
+      controller: widget.controller,
+      decoration: InputDecoration(
+        prefixIcon: Icon(widget.prefixIcon),
+        suffixIcon: widget.obscureText
+            ? GestureDetector(
+                onTap: _toggleObscure,
+                child: Icon(
+                  _obscure ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
+                  color: Colors.grey[400],
+                  size: 20,
                 ),
-              ]
+              )
             : null,
-      ),
-      child: TextFormField(
-        controller: widget.controller,
-        focusNode: _focusNode,
-        obscureText: _obscure,
-        maxLines: widget.maxLines,
-        keyboardType: widget.keyboardType,
-        validator: widget.validator,
-        cursorColor: AppColors.primary,
-        cursorHeight: 22.h,
-        style: TextStyle(
+        hint: CustomText(
+          txt: widget.hint,
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
-          color: AppColors.textPrimary,
+          color: Color(0xff626262),
+          fontFamily: GoogleFonts.poppins().fontFamily,
         ),
-        decoration: InputDecoration(
-          hintText: widget.hint,
-          hintStyle: TextStyle(
-            color: Colors.grey[400],
-            fontSize: 15.sp,
-            fontWeight: FontWeight.w400,
+        contentPadding: EdgeInsets.all(16),
+        fillColor: AppColors.secondary,
+        filled: true,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            style: BorderStyle.solid,
+            color: AppColors.primary,
+            width: 2,
           ),
-          prefixIcon: widget.prefixIcon != null
-              ? Icon(
-                  widget.prefixIcon,
-                  color: _isFocused ? AppColors.primary : Colors.grey[400],
-                  size: 22,
-                )
-              : null,
-          suffixIcon: widget.obscureText
-              ? GestureDetector(
-                  onTap: _toggleObscure,
-                  child: Icon(
-                    _obscure ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
-                    color: Colors.grey[400],
-                    size: 20,
-                  ),
-                )
-              : null,
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: 16.w,
-            vertical: 16.h,
-          ),
-          errorStyle: TextStyle(fontSize: 12.sp, color: AppColors.error),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(style: BorderStyle.none),
         ),
       ),
     );

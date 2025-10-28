@@ -64,7 +64,7 @@ class _OnboardingViewState extends State<OnboardingView>
         curve: Curves.easeInOut,
       );
     } else {
-      GoRouter.of(context).push(RouteNames.login);
+      GoRouter.of(context).push(RouteNames.welcome);
     }
   }
 
