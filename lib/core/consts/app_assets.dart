@@ -12,6 +12,8 @@ class AppImages {
   static const String fiverr = 'assets/images/fiverr.png';
   static const String bmw = 'assets/images/bmw.png';
   static const String hp = 'assets/images/hp.png';
+  static const String dribbble = 'assets/images/dribbble.png';
+  static const String facebook = 'assets/images/facebook.png';
   static const String ellipse1 = 'assets/images/Ellipse1.png';
   static const String ellipse2 = 'assets/images/Ellipse2.png';
   static const String ellipse3 = 'assets/images/Ellipse3.png';
