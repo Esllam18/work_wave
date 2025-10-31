@@ -50,7 +50,7 @@ class NotificationItemsListView extends StatelessWidget {
               );
             },
           ),
-          Gap(12.h),
+          Gap(32.h),
 
           // 🔹 Applications Section
           NotificationTitle(notificationTitle: 'Applications'),
@@ -70,7 +70,7 @@ class NotificationItemsListView extends StatelessWidget {
               );
             },
           ),
-          Gap(12.h),
+          Gap(32.h),
 
           // 🔹 Interview Section
           NotificationTitle(notificationTitle: 'Interview'),

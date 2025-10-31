@@ -53,7 +53,9 @@ class NotificationItem extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
-                          color: AppColors.black, // highlight brand/company
+                          color: isRead
+                              ? Colors.grey
+                              : AppColors.black, // highlight brand/company
                         ),
                       ),
                       TextSpan(
@@ -61,7 +63,9 @@ class NotificationItem extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
-                          color: AppColors.black, // softer color for text
+                          color: isRead
+                              ? Colors.grey
+                              : AppColors.black, // softer color for text
                         ),
                       ),
                     ],
@@ -76,7 +80,7 @@ class NotificationItem extends StatelessWidget {
                       txt: time ?? '',
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
-                      color: AppColors.black,
+                      color: isRead ? Colors.grey : AppColors.black,
                     ),
                     Gap(6.w),
                     if (!isRead)
