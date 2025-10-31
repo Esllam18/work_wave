@@ -14,7 +14,7 @@ class SavedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.secondary,
         body: SingleChildScrollView(
           padding: EdgeInsets.only(left: 18.w, right: 18.w, top: 18.h),
           physics: BouncingScrollPhysics(),

@@ -33,7 +33,8 @@ class _FilterChipsState extends State<FilterChips> {
               color: isSelected ? Colors.white : Colors.grey,
             ),
             selected: isSelected,
-            backgroundColor: Colors.white,
+            disabledColor: AppColors.secondary,
+            backgroundColor: AppColors.secondary,
             selectedColor: AppColors.primary,
             shape: RoundedRectangleBorder(
               side: BorderSide(

@@ -39,7 +39,7 @@ class JobsSavedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
-      elevation: 2,
+      // elevation: 2,
       borderRadius: BorderRadius.circular(16.r),
       child: Container(
         decoration: BoxDecoration(
@@ -53,7 +53,7 @@ class JobsSavedCard extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: Image.asset(item.image, width: 40.w, height: 40.w),
+                leading: Image.asset(item.image),
                 title: CustomText(
                   txt: item.title,
                   fontSize: 14.sp,
