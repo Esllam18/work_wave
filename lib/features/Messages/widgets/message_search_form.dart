@@ -19,7 +19,10 @@ class MessageSearch extends StatelessWidget {
       decoration: InputDecoration(
         contentPadding: EdgeInsets.all(14),
 
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+          borderSide: BorderSide(color: AppColors.primary),
+        ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.accent),
 
@@ -28,7 +31,7 @@ class MessageSearch extends StatelessWidget {
         fillColor: Colors.white,
         filled: true,
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.accent),
+          borderSide: BorderSide(color: AppColors.primary),
 
           borderRadius: BorderRadius.circular(16),
         ),

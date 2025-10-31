@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:work_wave/core/consts/app_colors.dart';
-import 'package:work_wave/features/message/widgets/custom_app_bar.dart';
-import 'package:work_wave/features/message/widgets/message_card_list_view.dart';
-import 'package:work_wave/features/message/widgets/message_search_form.dart';
+import 'package:work_wave/features/Messages/widgets/custom_app_bar.dart';
+import 'package:work_wave/features/Messages/widgets/message_card_list_view.dart';
+import 'package:work_wave/features/Messages/widgets/message_search_form.dart';
 
 class MessageView extends StatelessWidget {
   const MessageView({super.key});
@@ -23,6 +23,7 @@ class MessageView extends StatelessWidget {
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [MessageSearch(), Gap(24.h), MessageCardListView()],

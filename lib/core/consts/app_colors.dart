@@ -8,7 +8,7 @@ class AppColors {
   static const Color secondary = Color(0xffF1F4FF);
   static const Color accent = Color(0xff95969D);
   static const Color white = Color(0xffFFFFFF);
-  static const Color black = Color(0xff000000);
+  static const Color black = Color(0xff0D0D26);
   static const Color mainButtonIdle = Color(0xffCCCBCB);
   static const Color mainButtonHover = Color(0xffB5B3B3);
 

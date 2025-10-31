@@ -12,12 +12,14 @@ class MessageCard extends StatelessWidget {
     required this.time,
     required this.image,
     required this.nuberOfMessages,
+    required this.isRead,
   });
   final String tital;
   final String subTital;
   final String time;
   final String image;
   final String nuberOfMessages;
+  final bool isRead;
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -32,13 +34,14 @@ class MessageCard extends StatelessWidget {
         txt: subTital,
         fontSize: 14.sp,
         fontWeight: FontWeight.w400,
-        color: Color(0xff0D0D26),
+        color: isRead ? Colors.grey : Color(0xff0D0D26),
       ),
       leading: Padding(
         padding: const EdgeInsets.only(left: 0, right: 8, top: 8, bottom: 8),
         child: Image.asset(image),
       ),
       trailing: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           CustomText(
             txt: time,
@@ -52,15 +55,20 @@ class MessageCard extends StatelessWidget {
               color: AppColors.primary,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-              child: CustomText(
-                txt: nuberOfMessages,
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-              ),
-            ),
+            child: isRead
+                ? SizedBox.shrink()
+                : Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 3,
+                      horizontal: 6,
+                    ),
+                    child: CustomText(
+                      txt: nuberOfMessages,
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
+                  ),
           ),
         ],
       ),

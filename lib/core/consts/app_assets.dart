@@ -5,7 +5,12 @@ class AppImages {
   static const String spotify = 'assets/images/Spotify.png';
   static const String beats = 'assets/images/Beats.png';
   static const String burgerKing = 'assets/images/burger-king.png';
-  static const String Google = 'assets/images/Google.png';
+  static const String google = 'assets/images/Google.png';
+  static const String booking = 'assets/images/Booking.png';
+  static const String macdonald = 'assets/images/Macdonald.png';
+  static const String behance = 'assets/images/Behance.png';
+  static const String fiverr = 'assets/images/fiverr.png';
+  static const String bmw = 'assets/images/bmw.png';
   static const String hp = 'assets/images/hp.png';
   static const String ellipse1 = 'assets/images/Ellipse1.png';
   static const String ellipse2 = 'assets/images/Ellipse2.png';

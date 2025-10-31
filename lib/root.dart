@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:work_wave/core/consts/app_colors.dart';
-import 'package:work_wave/features/catygory/views/category_view.dart';
+import 'package:work_wave/features/Notifications/views/notifications_view.dart';
 import 'package:work_wave/features/home/persantaion/views/home_veiw.dart';
-import 'package:work_wave/features/message/views/message_view.dart';
+import 'package:work_wave/features/Messages/views/message_view.dart';
 import 'package:work_wave/features/seved/views/seved_view.dart';
 
 class Root extends StatefulWidget {
@@ -20,7 +20,7 @@ class _RootState extends State<Root> {
     const HomeView(),
     const MessageView(),
     const SevedView(),
-    const CategoryView(),
+    const NotificationsView(),
   ];
 
   @override

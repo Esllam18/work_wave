@@ -20,13 +20,14 @@ class _HomeViewState extends State<HomeView> {
       child: Scaffold(
         backgroundColor: Colors.white60,
         body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: [
                 Gap(28),
                 HomeHeader(),
-                Gap(37),
+                Gap(47),
                 HomeSearch(),
                 Gap(40),
                 TitalCollactionName(titalJop: 'Featured Jobs'),

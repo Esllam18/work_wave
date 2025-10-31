@@ -25,7 +25,10 @@ class CustomAppBar extends StatelessWidget {
             color: const Color(0xff356899),
           ),
           Gap(10.w),
-          Image.asset(AppIcons.editSquare, width: 28.w, height: 28.h),
+          Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Image.asset(AppIcons.editSquare),
+          ),
         ],
       ),
     );

@@ -65,6 +65,8 @@ class PopularJobCard extends StatelessWidget {
         fontWeight: FontWeight.w400,
       ),
       trailing: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           CustomText(txt: salery, fontSize: 12.sp, fontWeight: FontWeight.w500),
           Gap(8.h),
