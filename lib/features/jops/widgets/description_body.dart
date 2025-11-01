@@ -18,7 +18,7 @@ class DescriptionBody extends StatelessWidget {
             CustomText(
               txt:
                   'We are the teams 83.17 of all of Facebook\'s products used by billions of people around the world.Want to build new features and improve existing products like Messenger, Video, Groups, News Feed, Search and more?',
-              fontSize: 14.sp,
+              fontSize: 13.sp,
               color: AppColors.grey,
               fontWeight: FontWeight.w500,
               maxLines: 6,
@@ -27,19 +27,19 @@ class DescriptionBody extends StatelessWidget {
             Gap(16.h),
             CustomText(
               txt: 'Responsibilities:',
-              fontSize: 14.sp,
+              fontSize: 13.sp,
               color: Color(0xff494A50),
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w500,
             ),
             Gap(8.h),
             _buildResponsibility(
-              '💡 Full stack web/mobile application development with a variety of coding languages',
+              '- Full stack web/mobile application development with a variety of coding languages',
             ),
             _buildResponsibility(
-              '💡 Create consumer products and features using internal programming language Hack',
+              '- Create consumer products and features using internal programming language Hack',
             ),
             _buildResponsibility(
-              '💡 Implement web or mobile interfaces using XHTML, CSS, and JavaScript',
+              '- Implement web or mobile interfaces using XHTML, CSS, and JavaScript',
             ),
           ],
         ),
@@ -52,7 +52,7 @@ class DescriptionBody extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 8.h),
       child: CustomText(
         txt: text,
-        fontSize: 14.sp,
+        fontSize: 13.sp,
         color: AppColors.grey,
         fontWeight: FontWeight.w500,
         maxLines: 4,

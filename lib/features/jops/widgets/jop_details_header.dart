@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work_wave/core/consts/app_assets.dart';
 import 'package:work_wave/core/consts/app_colors.dart';
-import 'package:work_wave/core/widgets/custom_button.dart';
 import 'package:work_wave/core/widgets/custom_text.dart';
 
 class JopDetailsHeader extends StatelessWidget {
@@ -51,8 +50,8 @@ class JopDetailsHeader extends StatelessWidget {
                 children: List.generate(dec.length, (index) {
                   return Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 26.w,
-                      vertical: 10.h,
+                      horizontal: 22.w,
+                      vertical: 8.h,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(52.r),

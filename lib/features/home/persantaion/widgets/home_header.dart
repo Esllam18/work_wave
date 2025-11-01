@@ -32,7 +32,7 @@ class HomeHeader extends StatelessWidget {
         ),
         Stack(
           children: [
-            CircleAvatar(radius: 30, child: Image.asset(AppImages.ellipse1)),
+            CircleAvatar(radius: 30, child: Image.asset(AppImages.ellipse4)),
             Positioned(
               right: 0,
               top: 0,
