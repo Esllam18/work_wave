@@ -20,7 +20,7 @@ class RouteNames {
   static const String resetPassword = '/reset-password';
   static const String allItems = '/all-items';
   static const String payment = '/payment';
-  static const String productDetails = '/product-details';
+  static const String jopDetails = '/jop-details';
   static const String orders = '/orders';
   static const String root = '/root';
   static const String checkoutView = '/checkoutView';

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:work_wave/core/consts/app_assets.dart';
+import 'package:work_wave/core/router/route_names.dart';
 import 'package:work_wave/features/Saved/models/jops_saved.dart';
 import 'package:work_wave/features/Saved/widgets/saved_jop_card.dart';
 
@@ -47,7 +49,10 @@ class JobsSavedCardListView extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         final item = jobsSaved[index];
-        return JobsSavedCard(item: item);
+        return JobsSavedCard(
+          item: item,
+          onTap: () => GoRouter.of(context).push(RouteNames.jopDetails),
+        );
       },
     );
   }
