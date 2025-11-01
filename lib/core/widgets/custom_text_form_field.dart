@@ -13,8 +13,9 @@ class CustomTextormField extends StatefulWidget {
     this.validator,
     this.keyboardType,
     this.obscureText = false,
-    this.maxLines,
+    this.maxLines = 1,
     this.prefixIcon,
+    this.fillColor = AppColors.secondary,
   });
   final String hint;
   final TextEditingController? controller;
@@ -23,6 +24,7 @@ class CustomTextormField extends StatefulWidget {
   final bool obscureText;
   final int? maxLines;
   final IconData? prefixIcon;
+  final Color? fillColor;
 
   @override
   State<CustomTextormField> createState() => _CustomTextormFieldState();
@@ -55,6 +57,7 @@ class _CustomTextormFieldState extends State<CustomTextormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: widget.maxLines,
       obscureText: _obscure,
       focusNode: _focusNode,
 
@@ -72,6 +75,7 @@ class _CustomTextormFieldState extends State<CustomTextormField> {
                 ),
               )
             : null,
+
         hint: CustomText(
           txt: widget.hint,
           fontSize: 16.sp,
@@ -80,10 +84,10 @@ class _CustomTextormFieldState extends State<CustomTextormField> {
           fontFamily: GoogleFonts.poppins().fontFamily,
         ),
         contentPadding: EdgeInsets.all(16),
-        fillColor: AppColors.secondary,
+        fillColor: widget.fillColor,
         filled: true,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.r),
           borderSide: BorderSide(
             style: BorderStyle.solid,
             color: AppColors.primary,
@@ -91,7 +95,7 @@ class _CustomTextormFieldState extends State<CustomTextormField> {
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.r),
           borderSide: BorderSide(style: BorderStyle.none),
         ),
       ),

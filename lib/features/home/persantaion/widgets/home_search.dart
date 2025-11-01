@@ -26,7 +26,7 @@ class HomeSearch extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Image.asset(AppIcons.filter, width: 22, height: 25),
+            child: Image.asset(AppIcons.filter, width: 22.w, height: 25.h),
           ),
         ),
       ],

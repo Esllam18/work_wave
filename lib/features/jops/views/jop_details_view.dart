@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work_wave/core/consts/app_colors.dart';
+import 'package:work_wave/core/router/route_names.dart';
 import 'package:work_wave/core/widgets/custom_button.dart';
 import 'package:work_wave/core/widgets/custom_text.dart';
 import 'package:work_wave/features/jops/widgets/jop_details_header.dart';
@@ -37,12 +39,13 @@ class JopDetailsView extends StatelessWidget {
                       txt: 'Apply Now',
 
                       style: GoogleFonts.poppins(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () =>
+                        GoRouter.of(context).push(RouteNames.applayToJop),
                   ),
                 ),
               ),

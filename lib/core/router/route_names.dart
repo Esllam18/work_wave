@@ -25,4 +25,6 @@ class RouteNames {
   static const String root = '/root';
   static const String checkoutView = '/checkoutView';
   static const String onboarding = '/onboarding';
+  static const String applayToJop = '/applay-to-jop';
+  static const String successAppalied = '/success-Appalied';
 }

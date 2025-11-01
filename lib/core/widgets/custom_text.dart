@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomText extends StatelessWidget {
   final String txt;
@@ -30,19 +31,14 @@ class CustomText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Responsive font scaling
-    final double scaledFontSize = fontSize != null
-        ? MediaQuery.textScalerOf(context).scale(fontSize!)
-        : MediaQuery.textScalerOf(context).scale(
-            style?.fontSize ??
-                Theme.of(context).textTheme.bodyLarge?.fontSize ??
-                16,
-          );
+    // ✅ استخدم flutter_screenutil لتكبير وتصغير النص بشكل متناسب مع حجم الشاشة
+    final double responsiveFontSize = fontSize != null
+        ? fontSize!.sp
+        : (style?.fontSize ?? 16.sp);
 
     final TextStyle baseStyle =
-        style ??
-        Theme.of(context).textTheme.bodyLarge!.copyWith(
-          fontSize: scaledFontSize,
+        (style ?? Theme.of(context).textTheme.bodyLarge!).copyWith(
+          fontSize: responsiveFontSize,
           fontWeight: fontWeight,
           color: color,
           fontFamily: fontFamily,
@@ -59,12 +55,3 @@ class CustomText extends StatelessWidget {
     );
   }
 }
-
-// Example usage:
-// CustomText(
-//   txt: "مرحبا بك في التطبيق!",
-//   fontSize: 18,
-//   fontWeight: FontWeight.bold,
-//   textAlign: TextAlign.center,
-//   style: AppStyles.heading1(context),
-// )

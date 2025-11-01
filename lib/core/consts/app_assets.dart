@@ -18,6 +18,10 @@ class AppImages {
   static const String ellipse2 = 'assets/images/Ellipse2.png';
   static const String ellipse3 = 'assets/images/Ellipse3.png';
   static const String ellipse4 = 'assets/images/Ellipse4.png';
+  static const String maskgroup = 'assets/images/maskgroup.png';
+  static const String maskgroup2 = 'assets/images/maskgroup2.png';
+  static const String successIllustration =
+      'assets/images/successIllustration.png';
 }
 
 class AppIcons {
@@ -26,6 +30,8 @@ class AppIcons {
   static const String saved = 'assets/icons/saved.svg';
   static const String category = 'assets/icons/category.svg';
   static const String filter = 'assets/icons/Filter.png';
+  static const String verified = 'assets/icons/verified.png';
+  static const String upload = 'assets/icons/upload.png';
   static const String editSquare = 'assets/icons/Edit-Square.png';
 }
 
