@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:work_wave/features/home/persantaion/widgets/custom_drawer.dart';
 import 'package:work_wave/features/home/persantaion/widgets/featured_jobs_card.dart';
 import 'package:work_wave/features/home/persantaion/widgets/home_header.dart';
 import 'package:work_wave/features/home/persantaion/widgets/home_search.dart';
@@ -18,6 +19,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: CustomDrawer(),
         backgroundColor: Colors.white60,
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),

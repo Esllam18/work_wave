@@ -32,6 +32,7 @@ class AppIcons {
   static const String filter = 'assets/icons/Filter.png';
   static const String verified = 'assets/icons/verified.png';
   static const String upload = 'assets/icons/upload.png';
+  static const String goPremiumIcon = 'assets/icons/goPremiumIcon.png';
   static const String editSquare = 'assets/icons/Edit-Square.png';
 }
 

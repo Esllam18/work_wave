@@ -30,20 +30,23 @@ class HomeHeader extends StatelessWidget {
             ),
           ],
         ),
-        Stack(
-          children: [
-            CircleAvatar(radius: 30, child: Image.asset(AppImages.ellipse4)),
-            Positioned(
-              right: 0,
-              top: 0,
-              child: CircleAvatar(
-                radius: 9.r,
-                backgroundColor: Colors.white,
+        GestureDetector(
+          onTap: () => Scaffold.of(context).openDrawer(),
+          child: Stack(
+            children: [
+              CircleAvatar(radius: 30, child: Image.asset(AppImages.ellipse4)),
+              Positioned(
+                right: 0,
+                top: 0,
+                child: CircleAvatar(
+                  radius: 9.r,
+                  backgroundColor: Colors.white,
 
-                child: CircleAvatar(radius: 5.r, backgroundColor: Colors.red),
+                  child: CircleAvatar(radius: 5.r, backgroundColor: Colors.red),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );
