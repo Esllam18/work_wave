@@ -16,6 +16,7 @@ class CustomTextormField extends StatefulWidget {
     this.maxLines = 1,
     this.prefixIcon,
     this.fillColor = AppColors.secondary,
+    void Function(String query)? onChanged,
   });
   final String hint;
   final TextEditingController? controller;

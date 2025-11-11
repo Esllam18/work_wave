@@ -30,7 +30,7 @@ class CustomDrawer extends StatelessWidget {
                   heightFactor: .2.h,
                   alignment: Alignment.topRight,
                   child: IconButton(
-                    icon: Icon(Icons.cancel_presentation),
+                    icon: Icon(Icons.close, color: Colors.black),
                     onPressed: () => GoRouter.of(context).pop(),
                   ),
                 ),
@@ -92,13 +92,29 @@ class CustomDrawer extends StatelessWidget {
                 //  Scrollable Drawer Items
                 Column(
                   children: [
-                    _buildDrawerItem(Icons.person, 'Personal Info'),
-                    _buildDrawerItem(Icons.article_outlined, 'Applications'),
-                    _buildDrawerItem(Icons.work_outline, 'Proposals'),
-                    _buildDrawerItem(Icons.description_outlined, 'Resumes'),
-                    _buildDrawerItem(Icons.folder_open, 'Portfolio'),
-                    _buildDrawerItem(Icons.mail_outline, 'Cover Letters'),
-                    _buildDrawerItem(Icons.settings_outlined, 'Settings'),
+                    _buildDrawerItem(Icons.person, 'Personal Info', () {}),
+                    _buildDrawerItem(
+                      Icons.article_outlined,
+                      'Applications',
+                      () {},
+                    ),
+                    _buildDrawerItem(Icons.work_outline, 'Proposals', () {}),
+                    _buildDrawerItem(
+                      Icons.description_outlined,
+                      'Resumes',
+                      () => GoRouter.of(context).push(RouteNames.resume),
+                    ),
+                    _buildDrawerItem(Icons.folder_open, 'Portfolio', () {}),
+                    _buildDrawerItem(
+                      Icons.mail_outline,
+                      'Cover Letters',
+                      () {},
+                    ),
+                    _buildDrawerItem(
+                      Icons.settings_outlined,
+                      'Settings',
+                      () => GoRouter.of(context).push(RouteNames.settings),
+                    ),
                   ],
                 ),
 
@@ -157,7 +173,7 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildDrawerItem(IconData icon, String title) {
+  Widget _buildDrawerItem(IconData icon, String title, void Function()? onTap) {
     return ListTile(
       leading: Icon(icon, color: AppColors.grey),
       title: CustomText(
@@ -168,7 +184,7 @@ class CustomDrawer extends StatelessWidget {
           color: AppColors.black,
         ).fontFamily,
       ),
-      onTap: () {},
+      onTap: onTap,
     );
   }
 }

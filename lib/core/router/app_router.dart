@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:work_wave/core/router/route_names.dart';
 import 'package:work_wave/features/Onboarding/views/onboarding_view.dart';
+import 'package:work_wave/features/Search/view/search_view.dart';
+import 'package:work_wave/features/Settings/view/settings_view.dart';
 import 'package:work_wave/features/auth/persantation/views/login_view.dart';
 import 'package:work_wave/features/auth/persantation/views/signup_view.dart';
 import 'package:work_wave/features/home/persantaion/views/home_veiw.dart';
@@ -8,6 +10,7 @@ import 'package:work_wave/features/jops/views/applay_to_jop.dart';
 import 'package:work_wave/features/jops/views/jop_details_view.dart';
 import 'package:work_wave/features/jops/widgets/apply_success_widget.dart';
 import 'package:work_wave/features/profile/view/profile_view.dart';
+import 'package:work_wave/features/profile/view/resume_view.dart';
 import 'package:work_wave/features/splash/views/splash_view.dart';
 import 'package:work_wave/features/wlecome_view/welcome_view.dart';
 import 'package:work_wave/root.dart';
@@ -60,6 +63,18 @@ final router = GoRouter(
     GoRoute(
       path: RouteNames.profile,
       builder: (context, state) => const ProfileView(),
+    ),
+    GoRoute(
+      path: RouteNames.resume,
+      builder: (context, state) => const ResumePortfolioPage(),
+    ),
+    GoRoute(
+      path: RouteNames.settings,
+      builder: (context, state) => const SettingsView(),
+    ),
+    GoRoute(
+      path: RouteNames.search,
+      builder: (context, state) => const SearchView(),
     ),
   ],
 );

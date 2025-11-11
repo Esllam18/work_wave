@@ -12,7 +12,7 @@ class RouteNames {
   static const String favorites = '/favorites';
   static const String userIfon = '/user-info';
   static const String editProfile = '/edit-profile';
-  static const String accountSettings = '/account-settings';
+  static const String settings = '/settings';
   static const String changePassword = '/change-password';
   static const String paymentMethods = '/payment-methods';
   static const String search = '/search';
@@ -23,6 +23,7 @@ class RouteNames {
   static const String jopDetails = '/jop-details';
   static const String orders = '/orders';
   static const String root = '/root';
+  static const String resume = '/resume';
   static const String checkoutView = '/checkoutView';
   static const String onboarding = '/onboarding';
   static const String applayToJop = '/applay-to-jop';
