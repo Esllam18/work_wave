@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:go_router/go_router.dart';
-import 'package:work_wave/core/router/route_names.dart';
+
 import 'package:work_wave/features/home/persantaion/widgets/custom_drawer.dart';
 import 'package:work_wave/features/home/persantaion/widgets/featured_jobs_card.dart';
 import 'package:work_wave/features/home/persantaion/widgets/home_header.dart';
@@ -35,10 +34,7 @@ class _HomeViewState extends State<HomeView> {
                   Gap(28),
                   HomeHeader(),
                   Gap(47),
-                  GestureDetector(
-                    onTap: () => GoRouter.of(context).push(RouteNames.search),
-                    child: HomeSearch(),
-                  ),
+                  HomeSearch(),
                   Gap(40),
                   TitalCollactionName(titalJop: 'Featured Jobs'),
                   Gap(20),

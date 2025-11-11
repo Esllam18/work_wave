@@ -17,31 +17,38 @@ class SearchView extends StatefulWidget {
 
 class _SearchViewState extends State<SearchView> {
   final TextEditingController _controller = TextEditingController();
-  List<SearchItemModel> filteredJobs = [];
-  String selectedFilter = 'All';
+
+  String searchText = '';
 
   @override
   void initState() {
     super.initState();
-    filteredJobs = allJobs;
+
+    _controller.addListener(() {
+      setState(() {
+        searchText = _controller.text.trim();
+      });
+    });
   }
 
-  void searchJobs(String query) {
-    final input = query.toLowerCase();
-    var results = allJobs.where((job) {
-      final titleLower = job.title.toLowerCase();
-      final companyLower = job.subTitle.toLowerCase();
-      return titleLower.contains(input) || companyLower.contains(input);
-    }).toList();
-
-    // Apply filter
-    if (selectedFilter != 'All') {
-      results = results
-          .where((job) => job.jobStatus == selectedFilter)
-          .toList();
+  List<SearchItemModel> get _filteredJobs {
+    if (searchText.isEmpty) {
+      return allJobs;
     }
 
-    setState(() => filteredJobs = results);
+    final query = searchText.toLowerCase();
+
+    return allJobs.where((job) {
+      final title = job.title.toLowerCase();
+      final subTitle = job.subTitle.toLowerCase();
+      return title.contains(query) || subTitle.contains(query);
+    }).toList();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -62,7 +69,6 @@ class _SearchViewState extends State<SearchView> {
                         controller: _controller,
                         hint: 'Search a job or position',
                         prefixIcon: CupertinoIcons.search,
-                        onChanged: searchJobs,
                       ),
                     ),
                     SizedBox(width: 12.w),
@@ -81,7 +87,7 @@ class _SearchViewState extends State<SearchView> {
                   ],
                 ),
                 SizedBox(height: 20.h),
-                SearchItem(filteredJobs: filteredJobs),
+                SearchItem(filteredJobs: _filteredJobs),
               ],
             ),
           ),

@@ -17,6 +17,7 @@ class CustomTextormField extends StatefulWidget {
     this.prefixIcon,
     this.fillColor = AppColors.secondary,
     void Function(String query)? onChanged,
+    this.onTap,
   });
   final String hint;
   final TextEditingController? controller;
@@ -26,7 +27,7 @@ class CustomTextormField extends StatefulWidget {
   final int? maxLines;
   final IconData? prefixIcon;
   final Color? fillColor;
-
+  final void Function()? onTap;
   @override
   State<CustomTextormField> createState() => _CustomTextormFieldState();
 }
@@ -58,6 +59,8 @@ class _CustomTextormFieldState extends State<CustomTextormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: widget.onTap,
+
       maxLines: widget.maxLines,
       obscureText: _obscure,
       focusNode: _focusNode,

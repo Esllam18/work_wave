@@ -18,14 +18,10 @@ class HomeSearch extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: GestureDetector(
+            child: CustomTextormField(
               onTap: () => GoRouter.of(context).push(RouteNames.search),
-
-              child: CustomTextormField(
-                onChanged: (query) {},
-                hint: 'Search a job or position',
-                prefixIcon: CupertinoIcons.search,
-              ),
+              hint: 'Search a job or position',
+              prefixIcon: CupertinoIcons.search,
             ),
           ),
           SizedBox(width: 12.w),
