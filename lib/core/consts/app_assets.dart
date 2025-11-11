@@ -20,6 +20,12 @@ class AppImages {
   static const String ellipse4 = 'assets/images/Ellipse4.png';
   static const String maskgroup = 'assets/images/maskgroup.png';
   static const String maskgroup2 = 'assets/images/maskgroup2.png';
+  static const String portfolioOne = 'assets/images/Portfolio_one.png';
+  static const String portfolioTwo = 'assets/images/Portfolio_two.png';
+  static const String portfolioThree = 'assets/images/Portfolio_three.png';
+  static const String portfolioFour = 'assets/images/Portfolio_four.png';
+  static const String portfolioFive = 'assets/images/Portfolio_five.png';
+  static const String portfolioSix = 'assets/images/Portfolio_six.png';
   static const String successIllustration =
       'assets/images/successIllustration.png';
 }

@@ -7,6 +7,7 @@ import 'package:work_wave/features/home/persantaion/views/home_veiw.dart';
 import 'package:work_wave/features/jops/views/applay_to_jop.dart';
 import 'package:work_wave/features/jops/views/jop_details_view.dart';
 import 'package:work_wave/features/jops/widgets/apply_success_widget.dart';
+import 'package:work_wave/features/profile/view/profile_view.dart';
 import 'package:work_wave/features/splash/views/splash_view.dart';
 import 'package:work_wave/features/wlecome_view/welcome_view.dart';
 import 'package:work_wave/root.dart';
@@ -55,6 +56,10 @@ final router = GoRouter(
     GoRoute(
       path: RouteNames.successAppalied,
       builder: (context, state) => const ApplySuccessView(),
+    ),
+    GoRoute(
+      path: RouteNames.profile,
+      builder: (context, state) => const ProfileView(),
     ),
   ],
 );

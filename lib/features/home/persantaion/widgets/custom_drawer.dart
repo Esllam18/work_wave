@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work_wave/core/consts/app_assets.dart';
 import 'package:work_wave/core/consts/app_colors.dart';
+import 'package:work_wave/core/router/route_names.dart';
 import 'package:work_wave/core/widgets/custom_button.dart';
 import 'package:work_wave/core/widgets/custom_text.dart';
 
@@ -26,6 +27,7 @@ class CustomDrawer extends StatelessWidget {
             child: Column(
               children: [
                 Align(
+                  heightFactor: .2.h,
                   alignment: Alignment.topRight,
                   child: IconButton(
                     icon: Icon(Icons.cancel_presentation),
@@ -70,7 +72,8 @@ class CustomDrawer extends StatelessWidget {
                         ],
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () =>
+                            GoRouter.of(context).push(RouteNames.profile),
                         child: CustomText(
                           txt: 'View Profile',
                           style: GoogleFonts.poppins(
