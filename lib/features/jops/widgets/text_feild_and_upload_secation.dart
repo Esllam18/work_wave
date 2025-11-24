@@ -35,6 +35,7 @@ class _TextFeildAndUploadSecationState
       });
 
       CustomSnackBar.show(
+        // ignore: use_build_context_synchronously
         context,
         message: 'PDF uploaded successfully ',
         type: SnackBarType.success,
@@ -123,6 +124,7 @@ class _TextFeildAndUploadSecationState
                             color: const Color(0xffE9F6EF),
                             borderRadius: BorderRadius.circular(10.r),
                             border: Border.all(
+                              // ignore: deprecated_member_use
                               color: AppColors.primary.withOpacity(0.5),
                             ),
                           ),

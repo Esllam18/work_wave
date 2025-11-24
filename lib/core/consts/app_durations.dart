@@ -6,4 +6,5 @@ class AppDurations {
   static const Duration long = Duration(milliseconds: 1000);
   static const Duration veryLong = Duration(milliseconds: 2000);
   static const Duration extraLong = Duration(milliseconds: 3000);
+  static const Duration timeOut = Duration(minutes: 1);
 }

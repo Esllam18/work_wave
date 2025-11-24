@@ -34,6 +34,7 @@ class ProfileCard extends StatelessWidget {
         boxShadow: [
           if (isSelected)
             BoxShadow(
+              // ignore: deprecated_member_use
               color: AppColors.primary.withOpacity(0.2),
               blurRadius: 6,
               spreadRadius: 2,

@@ -38,6 +38,7 @@ class ResumeOptionCard extends StatelessWidget {
           boxShadow: [
             if (isSelected)
               BoxShadow(
+                // ignore: deprecated_member_use
                 color: color.withOpacity(0.2),
                 blurRadius: 6,
                 spreadRadius: 2,
@@ -64,6 +65,7 @@ class ResumeOptionCard extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                   decoration: BoxDecoration(
+                    // ignore: deprecated_member_use
                     color: color.withOpacity(isSelected ? 1 : 0.2),
                     borderRadius: BorderRadius.circular(8.r),
                   ),
